@@ -33,6 +33,7 @@ Vagrant.configure("2") do |config|
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -98,6 +99,9 @@ Vagrant.configure("2") do |config|
     # setup user for git
     su -c 'git config --global user.email "tong1212chang@gmail.com"' vagrant
     su -c 'git config --global user.name "TongChang"' vagrant
+
+    # setup git editor
+    su -c 'git config --global core.editor vim' vagrant
 
     # setup dotfiles
     echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> /home/vagrant/.ssh/config
