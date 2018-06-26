@@ -5,7 +5,6 @@
 * install Vagrant and Oracle Virtual Box.
 * clone this repository.
 * cd node-develop-environment
-* cp ~/.ssh/id_rsa ./sync
 * vagrant up && vagrant ssh
 * wait a few minutes.
 * please enjoy develop with node.js.

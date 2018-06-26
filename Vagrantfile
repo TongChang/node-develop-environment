@@ -76,6 +76,7 @@ Vagrant.configure("2") do |config|
 
     # apt-get
     apt-get upgrade
+    apt-get update
     apt-get install -y git perl vim jq tig sysv-rc-conf zsh
 
     # setting zsh
@@ -105,7 +106,7 @@ Vagrant.configure("2") do |config|
 
     # setup dotfiles
     echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> /home/vagrant/.ssh/config
-    su -c 'git clone git@github.com:TongChang/dotfiles.git /home/vagrant/dotfiles/' vagrant
+    su -c 'git clone https://github.com/TongChang/dotfiles.git /home/vagrant/dotfiles/' vagrant
     ln -s /home/vagrant/dotfiles/vim/_vimrc /home/vagrant/.vimrc
     ln -s /home/vagrant/dotfiles/zsh/_zshrc /home/vagrant/.zshrc
 
